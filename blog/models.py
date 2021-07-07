@@ -6,10 +6,21 @@ class Post(models.Model):
     original_name = models.CharField(max_length = 50)
     nameinspain = models.CharField(max_length = 50)
     year = models.DateTimeField()
-    director = models.charfield(max_length = 80)
+    director = models.CharField(max_length = 80)
     duration = models.TimeField()
-    sinopsis = models.textfield()
-    rate = models.SmallIntegerField(1,2,3,4,5)
+    sinopsis = models.TextField()
+    genres = models.CharField(max_length = 50)
+    rate = models.BooleanField(default=False)
+    Rating_CHOICES = (
+    (1, "1"),
+    (2, "2"),
+    (3, "3"),
+    (4, "4"),
+    (5, "5"),
+)
+rate = models.IntegerField(choices=Rating_CHOICES, default=1)
+     
+
     
 
 
